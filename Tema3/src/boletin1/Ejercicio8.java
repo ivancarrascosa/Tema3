@@ -31,7 +31,7 @@ public class Ejercicio8 {
 		
 		System.out.print("El número " + num + " se encuentra en las posiciones: ");
 		// Recorro la tabla y printeo donde se encuentra ese valor
-		for (int i = 0 ; i<100 ; i++) {
+		for (int i = 0 ; i<numeros.length ; i++) {
 			if (numeros[i] == num) {
 				System.out.print(i + " ");
 			}
