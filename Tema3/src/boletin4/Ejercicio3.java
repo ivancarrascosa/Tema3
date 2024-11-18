@@ -5,7 +5,7 @@ import java.util.*;
 public class Ejercicio3 {
 
 	public static void main(String[] args) {
-		System.out.println(Arrays.toString(rellenaPares(5,8)));
+		System.out.println(Arrays.toString(rellenaPares(8,8)));
 
 	}
 	public static int[] rellenaPares(int longitud, int fin) {
