@@ -5,11 +5,14 @@ import java.util.Arrays;
 public class Ejercicio4 {
 
 	public static void main(String[] args) {
-		ajedrez(3, 4, 'C');
-
+		char tabla[][] = new char[8][8];
+		tabla = ajedrez(3, 4, 'C');
+		for (int i = 0; i < tabla.length; i++) {
+			System.out.println(Arrays.toString(tabla[i]));
+		}
 	}
 
-	public static void ajedrez(int posFila, int posCol, char pieza) {
+	public static char[][] ajedrez(int posFila, int posCol, char pieza) {
 		// creo una variable para almacenar el tablero y despues recorrerlo e imprimirlo
 		// para que se vea bien
 		char tablero[][] = new char[8][8];
@@ -20,9 +23,8 @@ public class Ejercicio4 {
 		case 'T' -> tablero = torre(posFila, posCol);
 		case 'C' -> tablero = caballo(posFila, posCol);
 		}
-		for (int i = 0; i < tablero.length; i++) {
-			System.out.println(Arrays.toString(tablero[i]));
-		}
+		return tablero;
+		
 	}
 
 	public static char[][] alfil(int posFila, int posCol) {
