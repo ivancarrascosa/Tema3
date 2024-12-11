@@ -19,9 +19,6 @@ public class Ejercicio2 {
 		// Creo un array para imprimir las que haya acertado
 		char[] tablaAciertos;
 
-		// Creo una variable para almacenar que el usuario falle la contraseña
-		boolean fallo = true;
-
 		// Pido al usuario la contraseña y la almanceno en la variable
 		System.out.println("Introduzca la contraseña");
 		contraseña = reader.nextLine();
@@ -31,24 +28,23 @@ public class Ejercicio2 {
 		tablaAciertos = new char[contraseña.length()];
 		Arrays.fill(tablaAciertos, '*');
 
-		while (fallo) {
-			// Solicito que el usuario introduzca su intento de adivinarla
-			System.out.println("Intente adivinar la contraseña:");
-			res = reader.nextLine();
+		System.out.println("Intente adivinar la contraseña:");
+		res = reader.nextLine();
+
+		while (!res.equals(contraseña)) {
 			// Compruebo los caracteres que coinciden y en caso de que coincidan lo
-			// introduzco en el arrau
-			for (int i = 0; i < contraseña.length() && i < res.length(); i++) {
+			// introduzco en el array
+			for (int i = 0 ; i < contraseña.length() && i < res.length(); i++) {
 				if (contraseña.charAt(i) == res.charAt(i)) {
 					tablaAciertos[i] = contraseña.charAt(i);
 				}
 			}
-			// Imprimo el array
-			System.out.println(String.valueOf(tablaAciertos));
-			// En caso de que esté acertada entera pongo la variable en falso para que salga
-			// del bucle
-			if (String.valueOf(tablaAciertos).equals(contraseña)) {
-				fallo = false;
-			}
+				// Imprimo el array
+				System.out.println(String.valueOf(tablaAciertos));
+				// Solicito que el usuario introduzca su intento de adivinarla
+				System.out.println("Intente adivinar la contraseña:");
+				res = reader.nextLine();
+			
 
 		}
 		System.out.println("Has acertado la contraseña!");
