@@ -26,16 +26,18 @@ public class Ejercicio9 {
 		System.out.println("Introduzca la frase que quiera traducir");
 		frase = reader.nextLine();
 
-		if ((frase.indexOf(PRINCIPIO) != 0 || frase.charAt(LONG_PRINCIPIO) != ' ')
-				&& (frase.indexOf(FIN) != frase.length() + 1 - LONG_FIN
-						|| frase.charAt(frase.length() - LONG_FIN) != ' ')) {
+		if ((!frase.startsWith(PRINCIPIO)
+				|| (frase.charAt(LONG_PRINCIPIO) != ' ' && frase.charAt(LONG_PRINCIPIO) != '\t'))
+				&& (frase.indexOf(FIN) != frase.length() - LONG_FIN
+						|| (frase.charAt(frase.length() - LONG_FIN - 1) != ' ')
+						&& (frase.charAt(frase.length() - LONG_FIN - 1) != '\t'))) {
 			idioma = false;
 		}
 		if (idioma) {
 			frase = frase.replace(PRINCIPIO, "");
 			frase = frase.replace(FIN, "");
 		}
-		frase.trim();
+		frase = frase.trim();
 		if (idioma) {
 			System.out.println("La frase estaba en el idioma de Javalandia");
 			System.out.println(frase);
