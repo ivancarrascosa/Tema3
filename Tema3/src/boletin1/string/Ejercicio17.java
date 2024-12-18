@@ -26,4 +26,22 @@ public class Ejercicio17 {
 		return res;
 	}
 	
+	public static String eliminarComentariosCSubString(String sentenciaC) {
+		// Creo una variable para almacenar la repuesta
+		String res = "";
+		
+		final String INICIO = "/*";
+		final String FIN = "*/";
+		int posInicio = sentenciaC.indexOf(INICIO);
+		int posFin = 0;
+		
+		while (posInicio >= 0) {
+			res += sentenciaC.substring(posFin,posInicio);
+			posFin = sentenciaC.indexOf(FIN, posInicio) + 2;
+			posInicio = sentenciaC.indexOf(INICIO, posFin);
+		}
+		res += sentenciaC.substring(posFin, sentenciaC.length());
+		return res;
+	}
+	
 }

@@ -41,4 +41,17 @@ public class Ejercicio10 {
 		}
 		return res;
 	}
+	public static char codificaString(char conjunto1[], char conjunto2[], char c) {
+			char charCoded = c;
+			
+			String conj1Cad = String.valueOf(conjunto1);
+			String conj2Cad = String.valueOf(conjunto2);
+			
+			int pos = conj1Cad.indexOf(c);
+			
+			if (pos >= 0) {
+				charCoded = conj2Cad.charAt(pos);
+			}
+			return charCoded;
+	}
 }
