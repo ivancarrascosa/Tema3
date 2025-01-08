@@ -27,7 +27,7 @@ public class Exercise6 {
 				if (charMessage[i] + shift > 'Z') {
 					encodedMessage += (char) (((charMessage[i] + shift) % ('Z' + 1)) + 'A');
 				} else if (charMessage[i] + shift < 'A') {
-					encodedMessage += (char) (charMessage[i] + shift + 26);
+					encodedMessage += (char) (charMessage[i] + (shift%26) + 26);
 				} else {
 					encodedMessage += (char) (charMessage[i] + shift);
 				}
@@ -36,7 +36,7 @@ public class Exercise6 {
 				if (charMessage[i] + shift > '9') {
 					encodedMessage += (char) (((charMessage[i] + shift) % ('9' + 1)) + '0');
 				} else if (charMessage[i] + shift < '0') {
-					encodedMessage += (char) (charMessage[i] + shift + 10);
+					encodedMessage += (char) (charMessage[i] + (shift%10) + 10);
 				} else {
 					encodedMessage += (char) (charMessage[i] + shift);
 				}
