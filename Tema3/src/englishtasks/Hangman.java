@@ -5,19 +5,20 @@ import java.util.*;
 public class Hangman {
 	static Random rand = new Random();
 	static Scanner reader = new Scanner(System.in);
-
+	
+	static String lettersUsed = "";
 	public static void main(String[] args) {
 		int attempts = 10;
 		
 		String wordToGuess;
 		
-		String[] wordsList = { "bruhu" };
+		String[] wordsList = {"humanity", "person", "man"};
 		
 		char[] userGuess;
 		
 		String letterGuessed;
 		
-		String[] lettersUsed = new String[26];
+		
 		
 		int letterPos = 0;
 		// We select the random word
@@ -57,8 +58,12 @@ public class Hangman {
 	public static int searchLetter(String letter, String word, int startPos) {
 		int position;
 		position = word.indexOf(letter, startPos);
+		if (position < 0) {
+			lettersUsed += letter + " ";
+		}
 		return position;
 	}
+	
 	public static void printArrayChar(char[] guess) {
 		for (int i = 0; i < guess.length; i++) {
 			System.out.print(guess[i] + " ");

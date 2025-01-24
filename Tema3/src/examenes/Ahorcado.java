@@ -104,16 +104,16 @@ public class Ahorcado {
 
 	public static void compruebaLetra(char letra) {
 		// Creo una variable para almacenar un array de char que será la palabra pista
-		char[] palabraPistaArray;
+		char[] palabraPistaArray = palabraPista.toCharArray();
 		
 		// Creo una variable para almacenar si se ha encontrado la letra
 		boolean encontrada = false;
+		
 		// Recorro la palabra secreta
 		for (int i = 0; i < palabraSecreta.length(); i++) {
 			// Si una letra de la palabra secreta es igual a la letra, cambio la posición
 			// por la que estoy de la pista a la letra que se ha acertado
 			if (palabraSecreta.charAt(i) == letra) {
-				palabraPistaArray = palabraPista.toCharArray();
 				palabraPistaArray[i] = letra;
 				palabraPista = String.valueOf(palabraPistaArray);
 				encontrada = true;

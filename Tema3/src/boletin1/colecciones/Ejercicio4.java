@@ -12,15 +12,9 @@ public class Ejercicio4 {
 		// Creo una variable para almacenar un numero random
 		int numRand;
 		
-		// Creo una variable que cuente las veces que introduzco variables en el conjunto
-		int cont = 0;
-		
-		while (cont <= 20) {
+		while (numerosAleatoriosOrdenados.size() < 20) {
 			numRand = rand.nextInt(Integer.MIN_VALUE, 11);
-			if (!numerosAleatoriosOrdenados.contains(numRand)) {
-				numerosAleatoriosOrdenados.add(numRand);
-				cont++;
-			}
+			numerosAleatoriosOrdenados.add(numRand);
 		}
 		System.out.println(numerosAleatoriosOrdenados);
 
