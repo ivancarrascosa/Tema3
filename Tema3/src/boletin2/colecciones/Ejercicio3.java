@@ -13,16 +13,24 @@ public class Ejercicio3 {
 
 	public static TreeMap<Character, Integer> cuentaLetras(String texto) {
 		char letraActual;
+		// Creo un mapa para la respuesta
 		TreeMap<Character, Integer> res = new TreeMap<>();
+		
+		// Creo una lista en la que almacenare todas las letras
 		ArrayList<Character> textoEnLista = new ArrayList<>();
+		
+		// Recorro el texto
 		for (int i = 0; i < texto.length(); i++) {
 			letraActual = texto.charAt(i);
+			// Si la el caracter actual es una letra lo introduzco en el array en mayúscula
 			if (Character.isLetter(letraActual)) {
 				textoEnLista.add((char) (letraActual > 'Z' ? letraActual-32 : letraActual));
 			}
 		}
-		for (int i = 0; i < textoEnLista.size(); i++) {
-			res.put(textoEnLista.get(i), Collections.frequency(textoEnLista, textoEnLista.get(i)));
+		// Recorro los caracteres de A a Z
+		for (int i = 'A'; i <= 'Z'; i++) {
+			// Añado al mapa la frecuencia de los caracteres
+			res.put((char) i, Collections.frequency(textoEnLista, (char) i));
 		}
 		return res;
 	}
