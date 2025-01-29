@@ -6,7 +6,7 @@ import java.util.HashSet;
 public class Ejercicio7 {
 
 	public static void main(String[] args) {
-		String valor = "Hola";
+		String valor = "aa";
 		HashMap<Integer, HashSet<String>> diccionarioLongitudPalabras =new HashMap<>();
 		añadirPalabra(valor, diccionarioLongitudPalabras);
 		System.out.println(diccionarioLongitudPalabras);
